@@ -5,6 +5,7 @@ import ROUTES from "../app/routes";
 import { newQuizAndAssociationThunk } from "../features/quizzes/quizzesSlice";
 import { useDispatch, useSelector } from "react-redux";
 import  {topicSelector}  from "../features/topics/topicsSlice";
+import { addCard } from "../features/cards/cardsSlice";
 
 export default function NewQuizForm() {
 	const [name, setName] = useState("");
@@ -21,9 +22,19 @@ export default function NewQuizForm() {
 			return;
 		}
 
-		const cardIds = [];
-
+		const cardIds = []
 		
+		cards.forEach((card)=>{
+			let cardId = uuidv4()
+			cardIds.push(cardId)
+			dispatch(addCard({
+				id: cardId,
+				front: card.front,
+				back: card.back
+			}))
+		})
+
+	
 
 	dispatch(newQuizAndAssociationThunk(
 		{
