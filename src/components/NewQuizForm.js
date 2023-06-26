@@ -28,12 +28,11 @@ export default function NewQuizForm() {
 			let cardId = uuidv4()
 			cardIds.push(cardId)
 			dispatch(addCard({
-				id: cardId,
+				cardId: cardId,
 				front: card.front,
 				back: card.back
 			}))
 		})
-
 	
 
 	dispatch(newQuizAndAssociationThunk(

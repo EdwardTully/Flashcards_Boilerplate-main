@@ -4,7 +4,7 @@ import { getCards } from "./cardsSlice";
 import { useSelector } from "react-redux";
 
 export default function Card({ id }) {
-  const cards = useSelector(getCards); // replace this with a call to your selector to get all the cards in state
+  const cards = useSelector(getCards); 
   console.log(id)
   
   const card = cards[id];

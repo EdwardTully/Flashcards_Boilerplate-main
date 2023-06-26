@@ -10,8 +10,8 @@ export const cardSlice = createSlice({
     initialState: initialState,
     reducers: {
         addCard: (state,action)=>{
-            state.cards[action.payload.id]={
-                id: action.payload.id,
+            state.cards[action.payload.cardId]={
+                cardId: action.payload.cardId,
                 front: action.payload.front,
                 back: action.payload.back,
             }

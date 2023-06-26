@@ -4,14 +4,14 @@ import ROUTES from "../../app/routes";
 import { quizSelector } from "./quizzesSlice";
 import { useSelector } from "react-redux";
 
-
-export default function Topic() {
-  const quizzes = useSelector(quizSelector); // replace this with a call to your selector to get all the quizzes in state
+//Topic
+export default function Quiz() {
+  const quizzes = useSelector(quizSelector);
+   console.log(quizzes)
   let { quizId } = useParams();
   const quiz = quizzes[quizId];
-  console.log(quiz)
-  console.log(quizId)
-  console.log(quizzes)
+  
+ 
 
   return (
     <section>
